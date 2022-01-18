@@ -5,46 +5,205 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Single Price Grid Component</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap" rel="stylesheet">
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <title>Frontend Mentor | Single Price Grid Component</title>
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    :root {
+      --clr-cyan: hsl(179, 62%, 43%);
+      --clr-light-cyan: #4BBEBC;
+      --clr-yellow: hsl(71, 73%, 54%);
+      --clr-light-gray: hsl(204, 43%, 93%);
+      --clr-gray-blue:hsl(218, 22%, 67%);
+      --ff-body: 'Karla', sans-serif;
+    }
+
+    body {
+      background-color: var(--clr-light-gray);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .price-component {
+      display: flex;
+      flex-direction: column;
+      margin: 2em;
+      font-family: var(--ff-body);
+      color: #FFF;
+      line-height: 125%;
+      letter-spacing: -0.2px;
+      max-width: 635px;
+    }
+
+    /* Typography */
+
+    h2, h3 {
+      font-weight: 700;
+      line-height: 150%;
+      letter-spacing: -0.25px;
+      margin-top: 0;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+    }
+
+    h3 {
+      font-size: 1.125rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+
+    @media (min-width: 600px) {
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
+
+    /* Card styling */
+
+    .cta-container {
+      flex: 1;
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+
+    .card {
+      flex: 1;
+      padding: 1.5em;
+    }
+
+    @media (min-width: 600px) {
+      .cta-container {
+        flex-direction: row;
+      }
+      .card {
+        padding: 2.5rem;
+      }
+    }
+
+    .join-us {
+      background-color: #FFF;
+      border-top-left-radius: 0.375em;
+      border-top-right-radius: 0.375em;
+    }
+
+    .join-us > h2 {
+      color: var(--clr-cyan)
+    }
+
+    .join-us > span {
+      color: var(--clr-yellow);
+      font-size: 0.9375rem;
+      font-weight: 700;
+      line-height: 125%;
+    }
+
+    .join-us > p {
+      color: var(--clr-gray-blue);
+      line-height: 165%;
+      font-size: 0.875rem;
+    }
+
+    @media (min-width: 600px) {
+      .join-us > span {
+        font-size: 1.125rem;
+        font-weight: 700;
+        line-height: 125%;
+      } 
+      .join-us > p {
+        font-size: 1rem;
+      }
+    }
+
+    .pricing {
+      background-color: var(--clr-cyan);
+      
+    }
+
+    .usd-price {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-right: 0.5rem;
+    }
+
+    .per-month {
+      opacity: 0.5;
+    }
+
+    .pricing > button {
+      display: block;
+      margin: auto;
+      width: 100%;
+      padding-block: 1em;
+      border: none;
+      border-radius: 0.375em;
+      background-color: var(--clr-yellow);
+      color: #FFF;
+      font-weight: 700;
+      letter-spacing: -0.2px;
+      line-height: 125%;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+
+    .why-us {
+      background-color: var(--clr-light-cyan);
+    }
+
+    .why-us > ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .why-us > ul > li {
+      line-height: 125%;
+      letter-spacing: -0.175px;
+      opacity: 0.75;
+      font-size: 0.875rem;
+    }
   </style>
 </head>
 <body>
-  Join our community
-
-  30-day, hassle-free money back guarantee
-
-  Gain access to our full library of tutorials along with expert code reviews. 
-  Perfect for any developers who are serious about honing their skills.
-
-  Monthly Subscription
-
-  &dollar;29 per month
-
-  Full access for less than &dollar;1 a day
-
-  Sign Up
-
-  Why Us
-
-  Tutorials by industry experts
-  Peer &amp; expert code review
-  Coding exercises
-  Access to our GitHub repos
-  Community forum
-  Flashcard decks
-  New videos every week
-  
-  <footer>
-    <p class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
-    </p>
-  </footer>
+  <div class="price-component">
+    <div class="card join-us">
+      <h2>Join our community</h2>
+      <span>30-day, hassle-free money back guarantee</span>
+      <p>Gain access to our full library of tutorials along with expert code reviews. 
+      Perfect for any developers who are serious about honing their skills.</p>
+    </div>
+    <div class="cta-container">
+      <div class="card pricing">
+        <h3>Monthly Subscription</h3>
+        <p><span class="usd-price">&dollar;29</span><span class="per-month">per month</span></p>  
+        <p>Full access for less than &dollar;1 a day</p>
+        <button>Sign Up</button>
+      </div>
+      <div class="card why-us">
+        <h3>Why Us</h3>
+        <ul>
+          <li>Tutorials by industry experts</li>
+          <li>Peer &amp; expert code review</li>
+          <li>Coding exercises</li>
+          <li>Access to our GitHub repos</li>
+          <li>Community forum</li>
+          <li>Flashcard decks</li>
+          <li>New videos every week</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
