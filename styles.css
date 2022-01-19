@@ -21,7 +21,7 @@ body {
   align-items: center;
 }
 
-.price-component {
+main {
   display: flex;
   flex-direction: column;
   margin: 2em;
@@ -34,19 +34,19 @@ body {
 
 /* Typography */
 
-h2,
-h3 {
+h1,
+h2 {
   font-weight: 700;
   line-height: 26px;
   letter-spacing: -0.25px;
   margin-top: 0;
 }
 
-h2 {
+h1 {
   font-size: 1.25rem;
 }
 
-h3 {
+h2 {
   font-size: 1.125rem;
 }
 
@@ -55,7 +55,7 @@ p {
 }
 
 @media (min-width: 600px) {
-  h2 {
+  h1 {
     font-size: 1.5rem;
   }
 }
@@ -89,7 +89,7 @@ p {
   border-top-right-radius: 0.375em;
 }
 
-.join-us > h2 {
+.join-us > h1 {
   color: var(--clr-cyan);
 }
 
@@ -134,7 +134,9 @@ p {
   display: block;
   margin: auto;
   width: 100%;
-  padding-block: 1em;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-top: 1.625rem;
   border: none;
   border-radius: 0.375em;
   background-color: var(--clr-yellow);
@@ -157,4 +159,9 @@ p {
   letter-spacing: -0.175px;
   opacity: 0.75;
   font-size: 0.875rem;
+}
+
+/* Utils */
+.flex {
+  display: flex;
 }
